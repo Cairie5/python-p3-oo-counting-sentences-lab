@@ -3,7 +3,7 @@
 import re
 
 class MyString:
-    def _init_(self, value=None):
+    def __init__(self, value=None):
         self._value = None
         if value is not None:
             self.value = value
