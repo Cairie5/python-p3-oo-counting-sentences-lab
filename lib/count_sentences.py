@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
+import re
+
 class MyString:
-    
-    def __init__(self, value=None):
+    def _init_(self, value=None):
         self._value = None
         if value is not None:
             self.value = value
@@ -29,6 +30,6 @@ class MyString:
     
     def count_sentences(self):
         if self._value is None:
-          return 0
-        sentences = self._value.split('.')
-        return len(sentences)
+            return 0
+        sentences = re.split(r'[.!?]', self._value)
+        return len([sentence for sentence in sentences if sentence.strip()])
